@@ -1,4 +1,3 @@
-import { Button } from "@nextui-org/react";
 import "./App.css";
 import Template1 from "./pages/template1";
 
