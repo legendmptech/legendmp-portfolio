@@ -14,10 +14,7 @@ import {
   Avatar,
   Card,
   CardBody,
-  Input,
-  Textarea,
   Switch,
-  Button,
   Tab,
   Tabs,
 } from "@nextui-org/react";
