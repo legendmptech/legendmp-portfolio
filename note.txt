@@ -1,0 +1,101 @@
+use node version 18.18.2 to run the project properly
+
+    <>
+      <NavTemplate1 />
+      <div className="px-5 my-5">
+         <div className="flex flex-col content-center">
+          <div className="flex flex-col w-full justify-center items-center p-3">
+            <Avatar
+              src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+              style={{ width: "140px", height: "140px" }}
+            />
+          </div>
+          <div
+            style={{ fontSize: "28px", fontWeight: "lighter" }}
+            className="t-container"
+          >
+            <p id="About">
+              Hello<span style={{ fontSize: "40px" }}>👋🏻</span>
+            </p>
+            <p>
+              I`m{" "}
+              <b>
+                <span>Mohan Prasath S,</span>
+              </b>{" "}
+              a software developer and an aspiring Tech Entrepreneur👩🏻‍💻
+            </p>
+            <br />
+            <Button
+              as={Link}
+              color="secondary"
+              showAnchorIcon
+              variant="solid"
+              onClick={handleMailtoClick}
+            >
+              Get in touch
+            </Button>
+          </div>
+        </div>
+        <div className="t-container">
+          <h1 id="Education">Education</h1>
+          <Card className="flex flex-col ">
+            <CardBody>
+              <Card className="mb-3">
+                <CardBody>
+                  <h2>Bachelor of Mathematics</h2>
+                  <p style={{ fontStyle: "italic" }}>
+                    PSG College of Arts & Science
+                  </p>
+                  <p>2021 - 2024</p>
+                </CardBody>
+              </Card>
+              <Card className="mb-3">
+                <CardBody>
+                  <h2>High School</h2>
+                  <p style={{ fontStyle: "italic" }}>
+                    Jaisaradha Matriculation Higher Secondary School
+                  </p>
+                  <p>2019 - 2021</p>
+                </CardBody>
+              </Card>
+              <Card>
+                <CardBody>
+                  <h2>Class 10</h2>
+                  <p style={{ fontStyle: "italic" }}>
+                    Jaisaradha Matriculation Higher Secondary School
+                  </p>
+                  <p>2019</p>
+                </CardBody>
+              </Card>
+            </CardBody>
+          </Card>
+        </div>
+        <div className="t-container flex w-full flex-col">
+          <h1 id="Skills">Skills</h1>
+          <Tabs
+            aria-label="Dynamic tabs"
+            items={skills}
+            color="secondary"
+            variant="light"
+            style={{ zIndex: 25 }}
+          >
+            {(item) => (
+              <Tab key={item.id} title={item.label}>
+                <Card>
+                  <CardBody>{item.content}</CardBody>
+                </Card>
+              </Tab>
+            )}
+          </Tabs>
+        </div>
+        <TemplateFooter />
+      </div>
+      <div
+        className="grid grid-cols-3 gap-4"
+        style={{ width: "100%", maxWidth: "1px" }}
+      >
+        <div className="w-10 h-10 bg-red-800">1</div>
+        <div className="col-span-2 w-10 h-10 bg-zinc-950">2</div>
+      </div>
+      {/* <Particle /> */}
+    </>
