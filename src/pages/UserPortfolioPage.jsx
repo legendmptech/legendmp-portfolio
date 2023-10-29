@@ -4,7 +4,7 @@ import { json, useParams } from "react-router-dom";
 import { fstore } from "../firebase-config";
 import LoadingPage from "./LoadingPage";
 import MainTemplatePage from "../pages/MainTemplatePage";
-import userData from "./user.json";
+import Page404 from "./Page404";
 
 function UserPortfolioPage(props) {
   const { id } = useParams();
@@ -13,30 +13,26 @@ function UserPortfolioPage(props) {
   console.log(id);
   // Getting data from Firestore
   useEffect(() => {
-    // const getDataFromStore = async (id) => {
-    //   const docRef = doc(fstore, "portfolios", id);
-    //   await getDoc(docRef)
-    //     .then((snap) => {
-    //       setStateOfData("success");
-    //       console.log(JSON.stringify(snap.data()));
-    //       return snap.data();
-    //     })
-    //     .catch((err) => {
-    //       setStateOfData("failed");
-    //       console.log(err);
-    //     });
-    // };
-    // setData(getDataFromStore(id));
-    setData(userData);
-    setStateOfData("success");
+    const getDataFromStore = async (id) => {
+      const docRef = doc(fstore, "portfolios", id);
+      await getDoc(docRef)
+        .then((snap) => {
+          setStateOfData("success");
+          setData(snap.data());
+          return snap.data();
+        })
+        .catch((err) => {
+          setStateOfData("failed");
+          console.log(err);
+        });
+    };
+    getDataFromStore(id);
   }, [id]);
   return (
     <div>
-      {stateOfData === "loading" ? (
-        <LoadingPage />
-      ) : (
-        <MainTemplatePage data={userData} />
-      )}
+      {stateOfData === "loading" && <LoadingPage />}
+      {stateOfData === "success" && <MainTemplatePage data={data} />}
+      {stateOfData === "failed" && <Page404 />}
     </div>
   );
 }

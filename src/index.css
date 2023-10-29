@@ -1,10 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 #root {
   width: 100%;
   height: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,8 +19,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
+
 * {
   /* transition: all 0.5s ease-in; */
   z-index: 0;
@@ -23,40 +30,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 h1 {
   font-size: 22px;
   font-weight: bold;
   color: black;
   z-index: 25;
 }
+
 h2 {
   font-size: 18px;
   font-weight: 700;
 }
+
 p,
 span,
 label {
   z-index: 25;
 }
+
+.hand:hover {
+  transform: rotate(0.5turn);
+  transition: all 1s ease-in-out;
+}
+
 .head1 {
   font-size: 1.2rem;
 }
+
 .head2 {
   font-size: 1.1rem;
 }
+
 .subtitle {
   font-size: 0.98rem;
   color: rgb(49, 49, 49);
   text-align: center;
 }
+
 .para {
   font-size: 0.9rem;
   color: rgb(62, 62, 62);
 }
+
 .url {
   font-size: 0.95rem;
   text-align: center;
 }
+
 .page {
   width: 100%;
   height: 100%;
@@ -64,6 +85,7 @@ label {
   flex-direction: column;
   align-items: center;
 }
+
 .page-container {
   width: 100%;
   max-width: 1024px;
@@ -73,54 +95,133 @@ label {
   flex-direction: column;
   z-index: 29;
 }
+
 .temp-con1 {
   width: 100%;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.25);
 }
+
 .temp-con2 {
   width: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* justify-content: center; */
+  align-items: center;
 }
+
 .headline {
   font-size: 28px;
   text-align: center;
 }
+
 .flexyC {
   display: flex;
   flex-direction: column;
 }
+
 .heading {
-  background-color: white;
+  width: 100%;
+  background-color: rgba(255, 255, 255);
   color: black;
   padding: 5px;
   position: sticky;
   top: 0;
   text-align: center;
 }
+
+.heading:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+}
+
+/* AEP CARD */
+.aep-card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.aep-card:hover {
+  transform: scale(1.02);
+}
+
+.aep-card:hover .head2 {
+  font-weight: bold;
+}
+
+/* REF CONTAINER */
+
+.ref-cont {
+  display: none;
+}
+.ref-link {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.ref-link-hovered {
+  width: 80px;
+  transition: all 0.3s ease-out;
+  border-bottom: 2.5px solid black;
+}
+.line {
+  width: 40px;
+  border-bottom: 2.5px solid gray;
+}
+.ref-link:focus .line,
+.ref-link:hover .line {
+  width: 80px;
+  transition: all 0.3s ease-out;
+  border-bottom: 2.5px solid black;
+}
+/* .ref-link:hover {
+  margin-left: 20px;
+} */
+
 @media screen and (min-width: 768px) {
   .page-container {
     flex-direction: row;
   }
+  .nav-bar {
+    display: none;
+  }
   .temp-con1 {
     width: 33%;
-    height: 100%;
+    height: 100vh;
     position: sticky;
     top: 0;
     background-color: rgba(255, 255, 255, 0.5);
   }
+
   .temp-con2 {
     width: 65%;
     height: 100%;
   }
+
   .headline {
     font-size: 20px;
     z-index: 30;
+  }
+  .ref-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }

@@ -13,13 +13,7 @@ import { SunIcon } from "../../icons/SunIcon";
 import { MoonIcon } from "../../icons/MoonIcon";
 
 function NavTemplate1(props) {
-  const menuItems = [
-    "About",
-    "Education",
-    "Projects",
-    "Experience",
-    "Connect with Me",
-  ];
+  const { sections } = props;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -28,7 +22,7 @@ function NavTemplate1(props) {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       style={{ zIndex: 120 }}
-      className="md:hidden"
+      className="nav-bar"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -43,17 +37,17 @@ function NavTemplate1(props) {
         <NavbarBrand>
           <p className="text-inherit">Mohan Prasath S</p>
         </NavbarBrand>
-        <Switch
+        {/* <Switch
           defaultSelected
           size="lg"
           color="primary"
           startContent={<SunIcon />}
           endContent={<MoonIcon />}
-        />
+        /> */}
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {sections?.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <a
               className="w-full"

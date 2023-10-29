@@ -1,11 +1,14 @@
 {
+  "education": {
+    "data": {},
+    "list": []
+  },
   "achievements": {
-    "list": [],
+    "list": ["1698251451490"],
     "data": {
       "1698251451490": {
         "title": "Board Of Director",
         "type": "achievement",
-        "url": "https://google.com",
         "desc": "Board of Director of Community Service Avenue in Rotaract Club of PSG College of Arts & Science"
       }
     }
@@ -16,32 +19,50 @@
         "Good Communication",
         "Presentation Skill",
         "Good at Planning and Execution"
-      ]
+      ],
+      "2": ["Python", "Javascript", "HTML", "CSS", "React JS", "Node JS"],
+      "3": ["MS Word", "MS Excel", "Adobe Preimere Pro"]
     },
-    "list": [1]
+    "list": [
+      {
+        "id": "1",
+        "label": "Soft skills"
+      },
+      {
+        "id": "2",
+        "label": "Computer skills"
+      },
+      {
+        "id": "3",
+        "label": "Software skills"
+      }
+    ]
   },
   "sections": {
     "data": {
-      "1": "Education details",
       "2": "Skill sets",
       "3": "Projects",
       "4": "Experience",
       "5": "Achievements"
     },
-    "list": [1, 2, 3, 4, 5]
+    "list": ["2", "3", "4", "5"]
   },
-  "socialLinks": { "list": [], "data": {} },
+  "socialLinks": {
+    "list": [],
+    "data": {}
+  },
   "personalDetails": {
     "name": "mohan",
     "about": "This is mohan Prasath da kanna",
-    "email": "mohan@gmail.com"
+    "email": "mohan@gmail.com",
+    "oneLiner": "a software developer and an aspiring Tech Entrepreneur👩🏻‍💻"
   },
   "projects": {
     "data": {
       "1698251031940": {
         "title": "TakeMe Mobile App",
         "url": "https://bit.ly/legendmp-takeme",
-        "desc": "Developed a Mobile Application using React Native Framework for android and published in playstore.. It’s a Thought management & Note taking app ",
+        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
         "start": "2023",
         "end": "2023",
         "type": "project"
@@ -50,7 +71,7 @@
         "end": "2023",
         "url": "https://libib-clone-mohanprasath.netlify.app/",
         "title": "Libib landing Page",
-        "desc": "It’s a clone of landing page of the Zomato and developed using HTML, CSS & Javascript",
+        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
         "start": "2023",
         "type": "project"
       },
@@ -59,11 +80,11 @@
         "title": "Book My Show",
         "end": "2022",
         "start": "2022",
-        "desc": "It’s a full stack website with movieDB as database. Technologies used were ReactJS, NodeJS, ExpressJS ",
+        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
         "type": "project"
       },
       "1698251083247": {
-        "desc": "It’s a clone of landing page of the Zomato and developed using HTML, CSS & Javascript",
+        "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
         "type": "project",
         "start": "2023",
         "title": "Zomato landing Page",
@@ -73,7 +94,10 @@
     },
     "list": [1698251031940, 1698251083247, 1698251137398, 1698251247413]
   },
-  "experiences": { "data": {}, "list": [] },
+  "experiences": {
+    "data": {},
+    "list": []
+  },
   "ui": {
     "template": 1
   }
