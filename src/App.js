@@ -1,6 +1,4 @@
 import "./App.css";
-import Template1 from "./pages/Template1";
-import { fstore } from "./firebase-config";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Page404 from "./pages/Page404";
