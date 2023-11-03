@@ -13,7 +13,7 @@ import { SunIcon } from "../../icons/SunIcon";
 import { MoonIcon } from "../../icons/MoonIcon";
 
 function NavTemplate1(props) {
-  const { sections } = props;
+  const { sections, name } = props;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -35,7 +35,7 @@ function NavTemplate1(props) {
         justify="center"
       >
         <NavbarBrand>
-          <p className="text-inherit">Mohan Prasath S</p>
+          <p className="text-inherit">{name}</p>
         </NavbarBrand>
         {/* <Switch
           defaultSelected

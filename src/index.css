@@ -84,6 +84,20 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+}
+
+.page-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .page-container {
@@ -103,7 +117,6 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .temp-con2 {
@@ -132,8 +145,27 @@ label {
   color: black;
   padding: 5px;
   position: sticky;
-  top: 0;
+  top: 80px;
   text-align: center;
+}
+
+.heading-light {
+  color: white;
+  background-color: rgb(50, 50, 50);
+  text-align: center;
+  margin: 0 0 10px;
+  position: sticky;
+  top: 80px;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.heading-light:hover {
+  letter-spacing: 1.5;
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .heading:hover {
@@ -167,6 +199,7 @@ label {
 .ref-cont {
   display: none;
 }
+
 .ref-link {
   width: 100%;
   display: flex;
@@ -174,21 +207,25 @@ label {
   align-items: center;
   gap: 10px;
 }
+
 .ref-link-hovered {
   width: 80px;
   transition: all 0.3s ease-out;
   border-bottom: 2.5px solid black;
 }
+
 .line {
   width: 40px;
   border-bottom: 2.5px solid gray;
 }
+
 .ref-link:focus .line,
 .ref-link:hover .line {
   width: 80px;
   transition: all 0.3s ease-out;
   border-bottom: 2.5px solid black;
 }
+
 /* .ref-link:hover {
   margin-left: 20px;
 } */
@@ -197,15 +234,16 @@ label {
   .page-container {
     flex-direction: row;
   }
+
   .nav-bar {
     display: none;
   }
+
   .temp-con1 {
     width: 33%;
     height: 100vh;
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.5);
   }
 
   .temp-con2 {
@@ -213,10 +251,15 @@ label {
     height: 100%;
   }
 
+  .heading {
+    top: 0;
+  }
+
   .headline {
     font-size: 20px;
     z-index: 30;
   }
+
   .ref-cont {
     width: 100%;
     display: flex;

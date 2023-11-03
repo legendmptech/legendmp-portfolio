@@ -32,6 +32,7 @@ function AEPCard(props) {
     end,
     onAEPModalOpen,
     setCurrentModalProps,
+    isDark
   } = props;
   const [isHovered, setIsHovered] = useState(false);
   const handleOpenModal = () => {
@@ -51,8 +52,8 @@ function AEPCard(props) {
     >
       <Card
         className="aep-card text-black-500"
-        radius={isHovered ? "sm" : "none"}
-        shadow={isHovered ? "md" : "none"}
+        radius={isDark ? "sm" : isHovered ? "sm" : "none"}
+        shadow={isDark ? "md" : isHovered ? "md" : "none"}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
@@ -70,9 +71,8 @@ function AEPCard(props) {
               )}
               {url && (
                 <span
-                  class={`material-symbols-outlined ${
-                    isHovered ? "mb-4 ml-4" : ""
-                  }`}
+                  class={`material-symbols-outlined ${isHovered ? "mb-4 ml-4" : ""
+                    }`}
                 >
                   north_east
                 </span>
