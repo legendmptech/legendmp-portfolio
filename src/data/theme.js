@@ -1,4 +1,4 @@
-export default {
+const theme = {
     d1: {
         availableParticles: true,
         isDark: false,
@@ -63,3 +63,4 @@ export default {
         }
     }
 }
+export default theme

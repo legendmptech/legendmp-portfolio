@@ -44,8 +44,8 @@ function EducationCard(props) {
       onMouseOut={() => setIsHovered(false)}
     >
       <CardBody>
-        <div className="flex flex-row justify-between content-center">
-          <p style={{ fontWeight: "bold" }}>
+        <div className="flex flex-row justify-between content-center text-balck">
+          <p style={{ fontWeight: "bold", color: "#000" }}>
             {type === "school" ? std : degree}
             {type === "college" && " " + branch}
           </p>
@@ -57,8 +57,8 @@ function EducationCard(props) {
           /> */}
         </div>
         <Divider />
-        <p style={{ fontStyle: "italic" }}>{place}</p>
-        <p>
+        <p style={{ fontStyle: "italic", color: "#000" }}>{place}</p>
+        <p className="text-black">
           {type === "school" ? start : start + " - " + end} | {percent}%
         </p>
       </CardBody>

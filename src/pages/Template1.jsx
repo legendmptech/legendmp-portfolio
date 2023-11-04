@@ -38,7 +38,7 @@ function Template1(props) {
     <div className="page" style={{ backgroundImage: `url(${IMG[theme?.bgImg]})`, backgroundPosition: `${theme?.imgProps?.bgPosition}` }}>
       <NavTemplate1 sections={data?.sections} name={data?.personalDetails?.name} />
       <div className={`page-container flex flex-row md:flex-co bg-transparent`}>
-        <div className={`w-1/4 temp-con1 ${theme?.isDark ? "text-white" : ""}`}>
+        <div className={`w-1/4 temp-con1 ${theme?.isDark ? "text-white" : "text-black"}`}>
           <div className="flex flex-col w-full justify-center items-center p-3">
             <Avatar
               src={data?.personalDetails?.imgLink}
@@ -88,7 +88,7 @@ function Template1(props) {
             <h1 className={`${theme.isDark ? "heading-light" : "heading"}`} style={{ top: 0 }} id="About">
               About
             </h1>
-            <p id="About" className={`${theme?.isDark ? "text-white" : ""}`} style={{ textIndent: '30px', textAlign: 'justify' }}>{data.personalDetails.about}</p>
+            <p id="About" className={`${theme?.isDark ? "text-white" : "text-black"}`} style={{ textIndent: '30px', textAlign: 'justify' }}>{data.personalDetails.about}</p>
           </div>
           {sections.includes("Education") && education?.list?.length !== 0 && (
             <div className="section" id="Education">
