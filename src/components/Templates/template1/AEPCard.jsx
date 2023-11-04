@@ -24,11 +24,11 @@ function AEPCard(props) {
     desc,
     url,
     company,
-    start,
-    end,
+    // start,
+    // end,
     // onAEPModalOpen,
     // setCurrentModalProps,
-    isDark
+    // isDark
   } = props;
   const [isHovered, setIsHovered] = useState(false);
   // const handleOpenModal = () => {
@@ -48,8 +48,10 @@ function AEPCard(props) {
     >
       <Card
         className="aep-card text-black-500"
-        radius={isDark ? "sm" : isHovered ? "sm" : "none"}
-        shadow={isDark ? "md" : isHovered ? "md" : "none"}
+        radius={"sm"}
+        shadow={"md"}
+        // radius={isDark ? "sm" : isHovered ? "sm" : "none"}
+        // shadow={isDark ? "md" : isHovered ? "md" : "none"}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
@@ -60,15 +62,14 @@ function AEPCard(props) {
             </p>
             <div className="flex flex-row gap-2">
               {type === "experience" && <p className="subtitle">{company}</p>}
-              {type !== "achievement" && (
+              {/* {type !== "achievement" && (
                 <p className="subtitle">
                   [{start} - {end}]
                 </p>
-              )}
+              )} */}
               {url && (
                 <span
-                  class={`material-symbols-outlined ${isHovered ? "mb-4 ml-4" : ""
-                    }`}
+                  class={`material-symbols-outlined`}
                 >
                   north_east
                 </span>

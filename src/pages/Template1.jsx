@@ -37,7 +37,7 @@ function Template1(props) {
   return (
     <div className="page" style={{ backgroundImage: `url(${IMG[theme?.bgImg]})`, backgroundPosition: `${theme?.imgProps?.bgPosition}` }}>
       <NavTemplate1 sections={data?.sections} name={data?.personalDetails?.name} />
-      <div className={`page-container flex flex-row md:flex-co bg-transparent`}>
+      <div className={`page-container flex flex-row bg-transparent`}>
         <div className={`w-1/4 temp-con1 ${theme?.isDark ? "text-white" : "text-black"}`}>
           <div className="flex flex-col w-full justify-center items-center p-3">
             <Avatar
@@ -84,7 +84,7 @@ function Template1(props) {
         </div>
         <div style={{ width: "10%" }}></div>
         <div className="w-3/4 temp-con2 h-full">
-          <div className="px-5">
+          <div className="px-3">
             <h1 className={`${theme.isDark ? "heading-light" : "heading"}`} style={{ top: 0 }} id="About">
               About
             </h1>
@@ -181,7 +181,7 @@ function Template1(props) {
               </div>
             )}
           {sections.includes("Social Links") && socialLinks?.length !== 0 && (
-            <div className="flex flex-row gap-3" id="Social Links">
+            <div className="flex flex-col md:flex-row gap-3" id="Social Links">
               <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Social Links</h1>
               {socialLinks?.map((props) => {
                 return (
@@ -194,6 +194,7 @@ function Template1(props) {
           )}
         </div>
       </div>
+      {/* <div className="page-overlay" style={{ backgroundColor: `rgba(0,0,0,${theme?.imgProps?.bgOpacity})`, width: '100%', height: '100vh', zIndex: 0 }} /> */}
       <div className="page-overlay" style={{ backgroundColor: `rgba(0,0,0,${theme?.imgProps?.bgOpacity})`, width: '100%', height: '100vh', zIndex: 0 }} />
       {theme?.availableParticles && <Particle option_name={theme?.bgParticle} />}
     </div>

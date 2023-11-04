@@ -4,7 +4,7 @@ import {
   NavbarContent,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle,
+  NavbarMenuToggle, Link
   // Switch
 } from "@nextui-org/react";
 import React from "react";
@@ -22,7 +22,7 @@ function NavTemplate1(props) {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       style={{ zIndex: 120 }}
-      className="nav-bar"
+      className="nav-bar text-black"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -31,8 +31,7 @@ function NavTemplate1(props) {
       </NavbarContent>
 
       <NavbarContent
-        className="sm:hidden pr-3 flex-row justify-between content-between"
-        justify="center"
+        className="sm:hidden flex-row justify-between content-between"
       >
         <NavbarBrand>
           <p className="text-inherit">{name}</p>
@@ -49,14 +48,14 @@ function NavTemplate1(props) {
       <NavbarMenu>
         {sections?.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <a
-              className="w-full"
+            <Link
               href={`#${item}`}
               size="lg"
+              color="foreground"
               onClick={() => setIsMenuOpen(false)}
             >
               {item}
-            </a>
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

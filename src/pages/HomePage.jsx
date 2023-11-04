@@ -81,7 +81,7 @@ function HomePage(props) {
         </div>
       </div>
       {/* <div className="w-full h-20 absolute bottom-0 left-0 bg-gray-800"></div> */}
-      <div className="px-3">
+      <div className="px-3 home-sec-choose">
         <h1 className="subtitle">Why Choose our Professional Portfolio ?</h1>
         <ul>
           <li><b>Effortless Creation:</b> Say goodbye to technical challenges! Create your website by simply filling in the blanks. No coding or design skills required. It's as easy as ABC.</li>

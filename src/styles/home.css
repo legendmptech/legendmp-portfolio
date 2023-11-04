@@ -4,14 +4,15 @@
     --text-dark: black;
 }
 
-ul {
+.home-sec-choose>ul {
     font-size: 20px;
     list-style: circle;
     list-style-position: outside;
     list-style-type: circle;
     padding: 20px;
 }
-li {
+
+.home-sec-choose li {
     font-size: 20px;
     margin-bottom: 15px;
 }
@@ -21,7 +22,6 @@ li {
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 10px;
     color: white;
 }
 

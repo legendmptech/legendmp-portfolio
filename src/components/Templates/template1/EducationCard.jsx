@@ -26,7 +26,7 @@ function EducationCard(props) {
     std,
     // onEducationOpen,
     // setCurrentModalProps,
-    isDark
+    // isDark
   } = props;
   const [isHovered, setIsHovered] = useState(false);
   // const handleOpenModal = () => {
@@ -38,9 +38,11 @@ function EducationCard(props) {
   return (
     <Card
       className="aep-card text-black-500"
-      radius={isDark ? "sm" : isHovered ? "sm" : "none"}
-      shadow={isDark ? "md" : isHovered ? "md" : "none"}
-      onMouseOver={() => setIsHovered(true)}
+      // radius={isDark ? "sm" : isHovered ? "sm" : "none"}
+      // shadow={isDark ? "md" : isHovered ? "md" : "none"}
+      radius={"sm"}
+      shadow={"md"}
+      onMouseOver={() => { setIsHovered(true); console.log(isHovered) }}
       onMouseOut={() => setIsHovered(false)}
     >
       <CardBody>

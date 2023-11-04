@@ -35,7 +35,7 @@ const theme = {
         isDark: true,
         imgProps: {
             bgPosition: "right",
-            bgOpacity: 0.5
+            bgOpacity: 0.2
         }
     }, s4: {
         availableParticles: false,
@@ -43,7 +43,7 @@ const theme = {
         isDark: true,
         imgProps: {
             bgPosition: "left",
-            bgOpacity: 0.5
+            bgOpacity: 0.4
         }
     }, s5: {
         availableParticles: false,
@@ -59,7 +59,7 @@ const theme = {
         isDark: true,
         imgProps: {
             bgPosition: "right",
-            bgOpacity: 0.5
+            bgOpacity: 0.1
         }
     }
 }
