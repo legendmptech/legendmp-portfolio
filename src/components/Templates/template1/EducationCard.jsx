@@ -1,7 +1,6 @@
 import { Card, CardBody, Divider } from "@nextui-org/react";
 import { useState } from "react";
 // import Icon from "../Icon";
-import { GrEdit } from "react-icons/gr";
 
 /**
  *
@@ -25,17 +24,17 @@ function EducationCard(props) {
     start,
     end,
     std,
-    onEducationOpen,
-    setCurrentModalProps,
+    // onEducationOpen,
+    // setCurrentModalProps,
     isDark
   } = props;
   const [isHovered, setIsHovered] = useState(false);
-  const handleOpenModal = () => {
-    setCurrentModalProps({
-      ...props,
-    });
-    onEducationOpen();
-  };
+  // const handleOpenModal = () => {
+  //   setCurrentModalProps({
+  //     ...props,
+  //   });
+  //   onEducationOpen();
+  // };
   return (
     <Card
       className="aep-card text-black-500"

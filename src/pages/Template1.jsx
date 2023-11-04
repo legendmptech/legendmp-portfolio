@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import TemplateFooter from "../components/templates.footer";
 import {
   Link,
   Avatar,
@@ -21,20 +20,20 @@ import { THEME } from "../data";
 
 function Template1(props) {
   const { data } = props;
-  const [education, setEducation] = useState(data.education);
-  const [skills, setSkills] = useState(data.skills);
-  const [projects, setProjects] = useState(data.projects);
-  const [experiences, setExperiences] = useState(data.experiences);
-  const [achievements, setAchievements] = useState(data.achievements);
-  const [socialLinks, setSocialLinks] = useState(data.socialLinks);
-  const [sections, setSections] = useState(data.sections);
-  const [theme, setTheme] = useState(THEME[data?.ui.theme])
+  const [education] = useState(data.education);
+  const [skills] = useState(data.skills);
+  const [projects] = useState(data.projects);
+  const [experiences] = useState(data.experiences);
+  const [achievements] = useState(data.achievements);
+  const [socialLinks] = useState(data.socialLinks);
+  const [sections] = useState(data.sections);
+  const [theme] = useState(THEME[data?.ui.theme])
   // UI STATE
   const favicon = document.querySelector('link[rel="icon"]')
   useEffect(() => {
     document.title = data?.personalDetails?.name
     favicon.setAttribute("href", data?.personalDetails?.imgLink)
-  }, [data])
+  }, [data, favicon])
   return (
     <div className="page" style={{ backgroundImage: `url(${IMG[theme?.bgImg]})`, backgroundPosition: `${theme?.imgProps?.bgPosition}` }}>
       <NavTemplate1 sections={data?.sections} name={data?.personalDetails?.name} />
@@ -91,7 +90,7 @@ function Template1(props) {
             </h1>
             <p id="About" className={`${theme?.isDark ? "text-white" : ""}`} style={{ textIndent: '30px', textAlign: 'justify' }}>{data.personalDetails.about}</p>
           </div>
-          {sections.includes("Education") && education?.list?.length != 0 && (
+          {sections.includes("Education") && education?.list?.length !== 0 && (
             <div className="section" id="Education">
               <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Education</h1>
               <div className="flex flex-col gap-3 pt-5">
@@ -149,7 +148,7 @@ function Template1(props) {
               </div>
             </div>
           )}
-          {sections.includes("Projects") && projects?.list?.length != 0 && (
+          {sections.includes("Projects") && projects?.list?.length !== 0 && (
             <div className="section" id="Projects">
               <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Projects</h1>
               <div className="flex flex-col gap-3 pt-5">
@@ -160,7 +159,7 @@ function Template1(props) {
             </div>
           )}
           {sections.includes("Experience") &&
-            experiences?.list?.length != 0 && (
+            experiences?.list?.length !== 0 && (
               <div className="section" id="Experience">
                 <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Experiences</h1>
                 <div className="flex flex-col gap-3 pt-5">
@@ -171,7 +170,7 @@ function Template1(props) {
               </div>
             )}
           {sections.includes("Achievements") &&
-            achievements?.list?.length != 0 && (
+            achievements?.list?.length !== 0 && (
               <div className="section" id="Achievements">
                 <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Achievements</h1>
                 <div className="flex flex-col gap-3 pt-5">
@@ -181,7 +180,7 @@ function Template1(props) {
                 </div>
               </div>
             )}
-          {sections.includes("Social Links") && socialLinks?.length != 0 && (
+          {sections.includes("Social Links") && socialLinks?.length !== 0 && (
             <div className="flex flex-row gap-3" id="Social Links">
               <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Social Links</h1>
               {socialLinks?.map((props) => {

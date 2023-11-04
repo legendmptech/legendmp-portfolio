@@ -1,6 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { json, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { fstore } from "../firebase-config";
 import LoadingPage from "./LoadingPage";
 import MainTemplatePage from "../pages/MainTemplatePage";

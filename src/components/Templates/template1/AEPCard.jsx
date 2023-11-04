@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import {
   Card,
   CardBody,
-  CardHeader,
-  CardFooter,
   Divider,
   Link,
 } from "@nextui-org/react";
-import { wrap } from "framer-motion";
 
 /**
  *
@@ -22,7 +19,6 @@ import { wrap } from "framer-motion";
  */
 function AEPCard(props) {
   const {
-    id,
     type,
     title,
     desc,
@@ -30,17 +26,17 @@ function AEPCard(props) {
     company,
     start,
     end,
-    onAEPModalOpen,
-    setCurrentModalProps,
+    // onAEPModalOpen,
+    // setCurrentModalProps,
     isDark
   } = props;
   const [isHovered, setIsHovered] = useState(false);
-  const handleOpenModal = () => {
-    onAEPModalOpen();
-    setCurrentModalProps({
-      ...props,
-    });
-  };
+  // const handleOpenModal = () => {
+  //   onAEPModalOpen();
+  //   setCurrentModalProps({
+  //     ...props,
+  //   });
+  // };
   return (
     <ConditionalWrapper
       wrapper={(children) => (
@@ -89,5 +85,5 @@ function AEPCard(props) {
   );
 }
 const ConditionalWrapper = ({ type, wrapper, children }) =>
-  type == "project" ? wrapper(children) : children;
+  type === "project" ? wrapper(children) : children;
 export default AEPCard;

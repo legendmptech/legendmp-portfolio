@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./../styles/home.css"
-import { Accordion, AccordionItem, Avatar, Button, Input } from "@nextui-org/react";
+import { Accordion, AccordionItem, Button, Input } from "@nextui-org/react";
 // import Particle from "../components/Particle";
 import { BsWhatsapp } from 'react-icons/bs'
 
 function HomePage(props) {
-  const [data, setData] = useState({
+  const [data] = useState({
     price: "399",
     disCountPrice: "199",
     coupons: ['PSG360']
@@ -49,7 +49,7 @@ function HomePage(props) {
           <p className="text">Unlock your online potential effortlessly! <span className="bg-orange-500">Dive into the world of professional portfolios</span> tailored for students, jobseekers, and professionals. Craft your <span className="bg-orange-500">unique digital identity hassle-free</span>. Showcase your skills, achievements, and aspirations <span className="underline">without breaking a sweat</span>. This is your chance to stand out and leave a lasting impression. <span className="bg-red-700">Seize the opportunity now</span> and make your mark online!</p>
         </div>
         <div className="cont2">
-          <img src="https://be10x.in/wp-content/uploads/2023/10/Red-Abstract-YouTube-Thumbnail-1.jpg" />
+          <img alt="Legendmp Portfolio Dashboard" src="https://be10x.in/wp-content/uploads/2023/10/Red-Abstract-YouTube-Thumbnail-1.jpg" />
         </div>
         <div className="cont3 flex flex-col w-full text-center gap-1">
           <span className={`price ${isCouponAvailable ? "price-strike" : "glow"}`}>₹{data?.price}</span>

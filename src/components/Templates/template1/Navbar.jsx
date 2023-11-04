@@ -5,12 +5,12 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Switch,
+  // Switch
 } from "@nextui-org/react";
 import React from "react";
-import { Link } from "react-router-dom";
-import { SunIcon } from "../../icons/SunIcon";
-import { MoonIcon } from "../../icons/MoonIcon";
+// import { Link } from "react-router-dom";
+// import { SunIcon } from "../../icons/SunIcon";
+// import { MoonIcon } from "../../icons/MoonIcon";
 
 function NavTemplate1(props) {
   const { sections, name } = props;
