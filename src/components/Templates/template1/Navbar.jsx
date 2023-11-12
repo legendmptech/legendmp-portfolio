@@ -4,7 +4,7 @@ import {
   NavbarContent,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle, Link, NavbarItem
+  NavbarMenuToggle, Link,
   // Switch
 } from "@nextui-org/react";
 import React from "react";
