@@ -10,7 +10,7 @@ function UserPortfolioPage(props) {
   const { id } = useParams();
   const [stateOfData, setStateOfData] = useState("loading"); // failed,loading,success
   let [data, setData] = useState({});
-  console.log(id);
+  console.log(data);
   // Getting data from Firestore
   useEffect(() => {
     const getDataFromStore = async (id) => {

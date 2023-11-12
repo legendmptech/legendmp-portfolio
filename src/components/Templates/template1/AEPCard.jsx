@@ -61,7 +61,7 @@ function AEPCard(props) {
               {title}
             </p>
             <div className="flex flex-row gap-2">
-              {type === "experience" && <p className="subtitle">{company}</p>}
+              {type === "experience" && <p className="text-xl text-black">{company}</p>}
               {/* {type !== "achievement" && (
                 <p className="subtitle">
                   [{start} - {end}]

@@ -163,7 +163,7 @@ function Template1(props) {
               <div className="section" id="Experience">
                 <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Experiences</h1>
                 <div className="flex flex-col gap-3 pt-5">
-                  {experiences?.map((id) => {
+                  {experiences?.list?.map((id) => {
                     return <AEPCard {...experiences["data"][id]} isDark={theme?.isDark} />;
                   })}
                 </div>

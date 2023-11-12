@@ -4,7 +4,7 @@ import {
   NavbarContent,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle, Link
+  NavbarMenuToggle, Link, NavbarItem
   // Switch
 } from "@nextui-org/react";
 import React from "react";
@@ -46,6 +46,7 @@ function NavTemplate1(props) {
       </NavbarContent>
 
       <NavbarMenu>
+        <NavbarMenuItem key={"About"} ><Link href={"#About"} size={"lg"} color="foreground" onClick={() => setIsMenuOpen(false)}>About</Link></NavbarMenuItem>
         {sections?.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
