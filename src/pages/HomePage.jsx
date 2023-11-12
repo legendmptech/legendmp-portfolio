@@ -86,6 +86,7 @@ function HomePage(props) {
                 <p className="highlight">✅Create and Manage your website on your own, anytime anywhere using your phone</p>
                 <p className="highlight">✅Appear in Web Search Results</p>
                 <p className="highlight">✅Increased rate of getting selected in an interview</p>
+                <Link showAnchorIcon href="https://portfolio.legendmp.com/p/s_mohan_prasath" isExternal isBlock color="warning">PREVIEW THE PORTFOLIO</Link>
                 <div className="hidden mt-3 md:flex md:flex-col">
                   <p className="hightlight font-bold text-center text-4xl">Limited Time</p>
                   <Timer targetDate={deadline} />
