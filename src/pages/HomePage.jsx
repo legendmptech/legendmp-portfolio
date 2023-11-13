@@ -41,7 +41,9 @@ function HomePage(props) {
     { title: "Stand Out, Be Remembered", desc: "In a competitive world, standing out is essential. A professionally crafted portfolio sets you apart, making you memorable and compelling in the eyes of recruiters, clients, or academic institutions." },
     { title: "Appear in Search Results", desc: "Make your portfolio strong and appear in the Web Search Results", img_link: "https://us.123rf.com/450wm/vectorwin/vectorwin2203/vectorwin220304983/183236252-search-result-vector-icon-concept-search-result-in-internet-online-and-on-computer-informative.jpg?ver=6" }
   ]
-
+  const users = [
+    {}
+  ]
   const handleApplyCoupon = () => {
     let list = couponData?.allCoupons
     for (var i = 0; i < list.length; i++) {
@@ -85,10 +87,11 @@ function HomePage(props) {
               <PurchaseBtn couponData={couponData} isCouponAvailable={isCouponAvailable} style={{ padding: "10px", fontSize: "20px" }} />
             </div>
           </div>
-          <div className="w-full max-w-5xl flex flex-col justify-center content-center">
+          <div className="w-full max-w-5xl flex flex-col justify-center items-center">
             <h1 className="title"><span className="text-orange-500">Elevate</span> <span className="">Your <span className="text-orange-400">Online</span> Presence</span></h1>
             <h2 className="subtitle font-normal">Professional Portfolio Websites for <b>Students</b>, <b>Job Seekers</b>, and <b>Working Professionals</b></h2>
             {/* <Particle option_name={"diwali"} /> */}
+            <p className="max-w-prose text-center font-light text-3xl italic my-6">&apos;Showcase your skills, projects, Achivements and experiences in your portfolio website&apos;</p>
             <div className="w-full flex flex-col content-center md:flex-row text-justify px-4 py-7 gap-4">
               <div className="cont1 max-w-prose flex flex-col gap-2">
                 <p className="highlight">✅Just fill in the blanks and make your website in just 10 minutes</p>
@@ -96,7 +99,8 @@ function HomePage(props) {
                 <p className="highlight">✅Create and Manage your website on your own, anytime anywhere using your phone</p>
                 <p className="highlight">✅Appear in Web Search Results</p>
                 <p className="highlight">✅Increased rate of getting selected in an interview</p>
-                <Link showAnchorIcon href="https://portfolio.legendmp.com/p/s_mohan_prasath" isExternal isBlock color="warning">PREVIEW THE PORTFOLIO</Link>
+                <Link isExternal href="https://portfolio.legendmp.com/p/s_mohan_prasath" color="warning" isBlock showAnchorIcon target="_blank"
+                  rel="noopener noreferrer">PREVIEW THE PORTFOLIO WEBPAGE</Link>
                 <div className="mt-3 md:flex-col">
                   <p className="hightlight font-bold text-center text-4xl">Limited Time</p>
                   <Timer targetDate={deadline} />
