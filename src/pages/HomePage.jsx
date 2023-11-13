@@ -41,9 +41,6 @@ function HomePage(props) {
     { title: "Stand Out, Be Remembered", desc: "In a competitive world, standing out is essential. A professionally crafted portfolio sets you apart, making you memorable and compelling in the eyes of recruiters, clients, or academic institutions." },
     { title: "Appear in Search Results", desc: "Make your portfolio strong and appear in the Web Search Results", img_link: "https://us.123rf.com/450wm/vectorwin/vectorwin2203/vectorwin220304983/183236252-search-result-vector-icon-concept-search-result-in-internet-online-and-on-computer-informative.jpg?ver=6" }
   ]
-  const users = [
-    {}
-  ]
   const handleApplyCoupon = () => {
     let list = couponData?.allCoupons
     for (var i = 0; i < list.length; i++) {
