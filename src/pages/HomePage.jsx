@@ -15,7 +15,7 @@ function HomePage(props) {
   const [isCouponAvailable, setIsCouponAvailable] = useState(false)
   const [couponText, setCouponText] = useState("")
   // TIMER COMPONENT PROPS
-  const deadline = new Date('November 13, 2023 23:59:59').getTime()
+  const deadline = new Date('November 14, 2023 23:59:59').getTime()
   // const END_DATE_TIMER = deadline.getTime() - new Date().getTime();
   // USER INTERFACE STATE
   const faqs = [
