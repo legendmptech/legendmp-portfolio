@@ -15,7 +15,7 @@ import NavTemplate1 from "../components/Templates/template1/Navbar";
 import AEPCard from "../components/Templates/template1/AEPCard";
 import RefLinkContainer from "../components/RefLinkContainer";
 import EducationCard from "../components/Templates/template1/EducationCard";
-import { IMG } from "./../config"
+import { IMG } from "./../config";
 import { THEME } from "../data";
 
 function Template1(props) {
@@ -27,18 +27,31 @@ function Template1(props) {
   const [achievements] = useState(data.achievements);
   const [socialLinks] = useState(data.socialLinks);
   const [sections] = useState(data.sections);
-  const [theme] = useState(THEME[data?.ui.theme])
+  const [theme] = useState(THEME[data?.ui.theme]);
   // UI STATE
-  const favicon = document.querySelector('link[rel="icon"]')
+  const favicon = document.querySelector('link[rel="icon"]');
   useEffect(() => {
-    document.title = data?.personalDetails?.name
-    favicon.setAttribute("href", data?.personalDetails?.imgLink)
-  }, [data, favicon])
+    document.title = data?.personalDetails?.name;
+    favicon.setAttribute("href", data?.personalDetails?.imgLink);
+  }, [data, favicon]);
   return (
-    <div className="page" style={{ backgroundImage: `url(${IMG[theme?.bgImg]})`, backgroundPosition: `${theme?.imgProps?.bgPosition}` }}>
-      <NavTemplate1 sections={data?.sections} name={data?.personalDetails?.name} />
+    <div
+      className="page"
+      style={{
+        backgroundImage: `url(${IMG[theme?.bgImg]})`,
+        backgroundPosition: `${theme?.imgProps?.bgPosition}`,
+      }}
+    >
+      <NavTemplate1
+        sections={data?.sections}
+        name={data?.personalDetails?.name}
+      />
       <div className={`page-container flex flex-row bg-transparent`}>
-        <div className={`w-1/4 temp-con1 ${theme?.isDark ? "text-white" : "text-black"}`}>
+        <div
+          className={`w-1/4 temp-con1 ${
+            theme?.isDark ? "text-white" : "text-black"
+          }`}
+        >
           <div className="flex flex-col w-full justify-center items-center p-3">
             <Avatar
               src={data?.personalDetails?.imgLink}
@@ -71,10 +84,11 @@ function Template1(props) {
             onClick={() => {
               const subject = "I saw your portfolio";
               const body = "I wanted to get in touch with you...";
-              const mailtoLink = `mailto:${data?.personalDetails?.email
-                }?subject=${encodeURIComponent(
-                  subject
-                )}&body=${encodeURIComponent(body)}`;
+              const mailtoLink = `mailto:${
+                data?.personalDetails?.email
+              }?subject=${encodeURIComponent(
+                subject
+              )}&body=${encodeURIComponent(body)}`;
 
               window.location.href = mailtoLink;
             }}
@@ -85,27 +99,46 @@ function Template1(props) {
         <div style={{ width: "10%" }}></div>
         <div className="w-3/4 temp-con2 h-full">
           <div className="px-3">
-            <h1 className={`${theme.isDark ? "heading-light" : "heading"}`} style={{ top: 0 }} id="About">
+            <h1
+              className={`${theme.isDark ? "heading-light" : "heading"}`}
+              style={{ top: 0 }}
+              id="About"
+            >
               About
             </h1>
-            <p id="About" className={`${theme?.isDark ? "text-white" : "text-black"}`} style={{ textIndent: '30px', textAlign: 'justify' }}>{data.personalDetails.about}</p>
+            <p
+              id="About"
+              className={`${theme?.isDark ? "text-white" : "text-black"}`}
+              style={{ textIndent: "30px", textAlign: "justify" }}
+            >
+              {data.personalDetails.about}
+            </p>
           </div>
           {sections.includes("Education") && education?.list?.length !== 0 && (
             <div className="section" id="Education">
-              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Education</h1>
+              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                Education
+              </h1>
               <div className="flex flex-col gap-3 pt-5">
                 {education?.list?.map((id) => {
-                  return <EducationCard {...education?.data[id]} isDark={theme?.isDark} />;
+                  return (
+                    <EducationCard
+                      {...education?.data[id]}
+                      isDark={theme?.isDark}
+                    />
+                  );
                 })}
               </div>
             </div>
           )}
-          {sections.includes("Skills") && (
-            <div className="section" id="Skills">
-              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Skills</h1>
-              <div className="flex flex-col gap-3 pt-5">
-                <Tabs aria-label="options">
-                  {skills?.["soft skills"].length !== 0 && (
+          {sections.includes("Skills") &&
+            skills?.["soft skills"].length !== 0 && (
+              <div className="section" id="Skills">
+                <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                  Skills
+                </h1>
+                <div className="flex flex-col gap-3 pt-5">
+                  <Tabs aria-label="options">
                     <Tab key="soft skills" title="Soft skills">
                       <Card>
                         <CardBody>
@@ -117,43 +150,46 @@ function Template1(props) {
                         </CardBody>
                       </Card>
                     </Tab>
-                  )}
-                  {skills?.["computer skills"].length !== 0 && (
-                    <Tab key="computer skills" title="Computer skills">
-                      <Card>
-                        <CardBody>
-                          <div className="flex flex-col gap-2">
-                            {skills?.["computer skills"]?.map((title, k) => (
-                              <Chip color="secondary">{title}</Chip>
-                            ))}
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Tab>
-                  )}
-                  {skills?.["software skills"].length !== 0 && (
-                    <Tab key="software skills" title="Software skills">
-                      <Card>
-                        <CardBody>
-                          <div className="flex flex-col gap-2">
-                            {skills?.["software skills"]?.map((title, k) => (
-                              <Chip color="secondary">{title}</Chip>
-                            ))}
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Tab>
-                  )}
-                </Tabs>
+                    {skills?.["computer skills"].length !== 0 && (
+                      <Tab key="computer skills" title="Computer skills">
+                        <Card>
+                          <CardBody>
+                            <div className="flex flex-col gap-2">
+                              {skills?.["computer skills"]?.map((title, k) => (
+                                <Chip color="secondary">{title}</Chip>
+                              ))}
+                            </div>
+                          </CardBody>
+                        </Card>
+                      </Tab>
+                    )}
+                    {skills?.["software skills"].length !== 0 && (
+                      <Tab key="software skills" title="Software skills">
+                        <Card>
+                          <CardBody>
+                            <div className="flex flex-col gap-2">
+                              {skills?.["software skills"]?.map((title, k) => (
+                                <Chip color="secondary">{title}</Chip>
+                              ))}
+                            </div>
+                          </CardBody>
+                        </Card>
+                      </Tab>
+                    )}
+                  </Tabs>
+                </div>
               </div>
-            </div>
-          )}
+            )}
           {sections.includes("Projects") && projects?.list?.length !== 0 && (
             <div className="section" id="Projects">
-              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Projects</h1>
+              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                Projects
+              </h1>
               <div className="flex flex-col gap-3 pt-5">
                 {projects["list"].map((id) => {
-                  return <AEPCard {...projects["data"][id]} isDark={theme?.isDark} />;
+                  return (
+                    <AEPCard {...projects["data"][id]} isDark={theme?.isDark} />
+                  );
                 })}
               </div>
             </div>
@@ -161,10 +197,17 @@ function Template1(props) {
           {sections.includes("Experience") &&
             experiences?.list?.length !== 0 && (
               <div className="section" id="Experience">
-                <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Experiences</h1>
+                <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                  Experiences
+                </h1>
                 <div className="flex flex-col gap-3 pt-5">
                   {experiences?.list?.map((id) => {
-                    return <AEPCard {...experiences["data"][id]} isDark={theme?.isDark} />;
+                    return (
+                      <AEPCard
+                        {...experiences["data"][id]}
+                        isDark={theme?.isDark}
+                      />
+                    );
                   })}
                 </div>
               </div>
@@ -172,17 +215,26 @@ function Template1(props) {
           {sections.includes("Achievements") &&
             achievements?.list?.length !== 0 && (
               <div className="section" id="Achievements">
-                <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Achievements</h1>
+                <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                  Achievements
+                </h1>
                 <div className="flex flex-col gap-3 pt-5">
                   {achievements?.list.map((id) => {
-                    return <AEPCard {...achievements?.data[id]} isDark={theme?.isDark} />;
+                    return (
+                      <AEPCard
+                        {...achievements?.data[id]}
+                        isDark={theme?.isDark}
+                      />
+                    );
                   })}
                 </div>
               </div>
             )}
           {sections.includes("Social Links") && socialLinks?.length !== 0 && (
             <div className="flex flex-col md:flex-row gap-3" id="Social Links">
-              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>Social Links</h1>
+              <h1 className={`${theme.isDark ? "heading-light" : "heading"}`}>
+                Social Links
+              </h1>
               {socialLinks?.map((props) => {
                 return (
                   <Link href={props.url} isExternal>
@@ -195,8 +247,18 @@ function Template1(props) {
         </div>
       </div>
       {/* <div className="page-overlay" style={{ backgroundColor: `rgba(0,0,0,${theme?.imgProps?.bgOpacity})`, width: '100%', height: '100vh', zIndex: 0 }} /> */}
-      <div className="page-overlay" style={{ backgroundColor: `rgba(0,0,0,${theme?.imgProps?.bgOpacity})`, width: '100%', height: '100vh', zIndex: 0 }} />
-      {theme?.availableParticles && <Particle option_name={theme?.bgParticle} />}
+      <div
+        className="page-overlay"
+        style={{
+          backgroundColor: `rgba(0,0,0,${theme?.imgProps?.bgOpacity})`,
+          width: "100%",
+          height: "100vh",
+          zIndex: 0,
+        }}
+      />
+      {theme?.availableParticles && (
+        <Particle option_name={theme?.bgParticle} />
+      )}
     </div>
   );
 }
